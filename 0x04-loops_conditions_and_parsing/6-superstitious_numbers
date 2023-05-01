@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#function for printingtext after superstitious numbers
+
+COUNTER=1
+while [ $COUNTER -lt 20 ]
+do
+((COUNTER++))
+case $COUNTER in
+		4)
+			echo $COUNTER
+			echo "bad luck from China";;
+		9)
+			echo $COUNTER
+			echo "bad luck from Japan";;
+		17)
+			echo $COUNTER
+			echo "bad luck from Italy";;
+		*)
+			echo $COUNTER
+esac
+done 
