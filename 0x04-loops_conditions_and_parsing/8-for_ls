@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#printing contents of a folder in list format
+
+for COUNTER in *
+do
+	echo "$COUNTER" | cut -d '-' -f 2;
+done
