@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #function for printingtext after superstitious numbers
 
-COUNTER=1
+COUNTER=0
 while [ $COUNTER -lt 20 ]
 do
 ((COUNTER++))
