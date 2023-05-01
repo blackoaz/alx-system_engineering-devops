@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#using until function to loop
+
+COUNTER=0
+until [ $COUNTER -eq 10 ]
+do
+	echo "Best School"
+	(( COUNTER++ ))
+done
