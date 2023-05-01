@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#function for outputting hi on the 9th iteration
+
+COUNTER=0
+while [ $COUNTER -lt 10 ]
+do
+	if [ $COUNTER = 9 ]
+	then
+		echo "hi"
+	fi
+	echo "Best School"
+	(( COUNTER++ ))
+done
