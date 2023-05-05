@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#script for listening to a port
+sudo nc -l -k 98
