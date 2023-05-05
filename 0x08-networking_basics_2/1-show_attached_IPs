@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#displaying all the internet protocol in your machine
+ifconfig | awk -F "[: ]+" '/inet addr:/ { print $4}'
