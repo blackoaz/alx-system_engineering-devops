@@ -1,11 +1,10 @@
-#creating a file with puppet
+#create a file with a puppet
 $file_path = '/tmp/school'
-
-file {'creating a file':
-ensure => file,
-mode => '0744',
-owner => 'www-data',
-group => 'www-data',
-content => 'I love Puppet',
-path => $file_path
+file { 'create_file':
+    ensure  => 'file',
+    content => 'I love Puppet',
+    group   => 'www-data',
+    mode    => '0744',
+    owner   => 'www-data',
+    path    => $file_path
 }
