@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#script for redirecting a web page
+
+apt-get update
+apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+echo "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html
+    location / {
+	try_files $uri $uri/ =404;
+}
+    root   /var/www/html;
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+	root /var/www/html;
+	echo "Ceci n'\''est pas une page";
+    }
+}" > /etc/nginx/sites-available/default
+service nginx restart
+
