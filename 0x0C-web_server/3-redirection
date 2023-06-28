@@ -1,13 +1,13 @@
-#!/usr/biin/env bash
+#!/usr/bin/env bash
 #script for redirecting a web page
 
 apt-get update
 apt-get install -y nginx
-echo "Hello World!" > /etc/nginx/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 echo "server {
-    listen 80;
+    listen 80 default_server;
     listen [::]:80 default_server;
-    root   /etc/nginx/html;
+    root   /var/www/html;
     index  index.html;
     location /redirect_me {
         return 301 https://stackoverflow.com/;
