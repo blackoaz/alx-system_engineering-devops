@@ -12,4 +12,4 @@ username=$3
 ssh_key=$4
 
 scp -o StrictHostKeyChecking=no -i "$ssh_key" "$path_to_file" "$username@$ip:~/"
- 
+
