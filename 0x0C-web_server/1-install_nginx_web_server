@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# script for installing nginx and running it
+
+# updating the system packages
+apt-get update
+# installing nginx web server
+apt-get install -y nginx
+
+# configuring nginx html file
+echo "Hello World!" > /var/www/html/index.html
+# starting nginx server
+service nginx start
