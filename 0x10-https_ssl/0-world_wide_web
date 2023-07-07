@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Usage: ./1-world_wide_web <domain> <subdomain>
+# Display information about subdomains.
+
+domain=$1
+subdomain=$2
+
+get_record() {
+  dig $1 | awk '/ANSWER SECTION/ {getline; print $5}'
+}
+
+if [ -z "$subdomain" ]; then
+  subdomains=("www" "lb-01" "web-01" "web-02")
+else
+  subdomains=("$subdomain")
+fi
+
+for sub in "${subdomains[@]}"; do
+  record=$(get_record "$sub.$domain")
+  echo "The subdomain $sub is a A record and points to $record"
+done
+
