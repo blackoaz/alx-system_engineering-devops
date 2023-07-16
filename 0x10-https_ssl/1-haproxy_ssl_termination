@@ -1,0 +1,18 @@
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend akello-frontend
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/akello.tech.pem
+    http-request redirect scheme https unless { ssl_fc }
+    http-request set-header X-Forwarded-Proto https
+    default_backend akello-backend
+
+backend akello-backend
+    balance roundrobin
+    server web-server-01 100.26.18.154:80 check
+    server web-server-02 54.175.95.164:80 check
