@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Script for for fetching a given employee ID, returns information
-about his/her TODO list progress and saving the date in a csv file 
+about his/her TODO list progress and saving the date in a csv file
 """
 import re
 import requests
